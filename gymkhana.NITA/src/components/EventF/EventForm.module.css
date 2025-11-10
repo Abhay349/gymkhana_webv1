@@ -1,0 +1,132 @@
+.pageWrapper {
+  background: linear-gradient(135deg, white(180, 14%, 97%) 0%, #000000 100%);
+  min-height: 00vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  background: #fff;
+  padding: 3.5rem;
+  border-radius: 1rem;
+  max-width: 600px;
+  width: 100%;
+  border: 1px solid rgba(205, 199, 199, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  color:  #1E90FF;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form:hover {
+  transform: translateY(-8px);
+  
+  border-color: rgba(239, 240, 242, 0.6);
+}
+
+.formTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  color: black; /* dark blue accent */
+  margin-bottom: 1rem;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #222a34;
+}
+
+.input,
+.textarea {
+  padding: 0.65rem 1rem;
+  border-radius: 0.75rem;
+  border: 1.8px solid rgba(240, 237, 237, 0.5);
+  font-size: 1rem;
+  transition: border 0.3s ease;
+  outline: none;
+  font-family: 'Roboto Mono', monospace;
+  color: #222;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #000; /* black outline on focus */
+  
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.button {
+  background-color: #1E90FF;  /* Normal solid blue */
+  color: white;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 0.85rem 0;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.button:hover {
+  background-color: #094bb5; /* Slightly darker blue on hover */
+}
+
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.message {
+  border-radius: 0.75rem;
+  padding: 0.85rem 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.error {
+  background: #ffdbdb;
+  color: #b22222;
+  box-shadow: 0 0 8px rgba(178, 34, 34, 0.4);
+}
+
+.success {
+  background: #c7f0d9;
+  color: #006633;
+  box-shadow: 0 0 8px rgba(0, 102, 51, 0.5);
+}
+
+.logoutButton {
+  background: #1E90FF;
+  color: white;
+  font-weight: 700;
+  padding: 0.6rem 1.3rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  justify-content: center;
+  display: flex;
+}
+
+.logoutButton:hover {
+  background: #061d42;
+}
+
+
+

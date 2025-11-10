@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cl-internal-b3fm6y {
+  display: none !important;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.eventCardShadow {
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+@media (max-width: 1024px) {
+  .eventCardShadow {
+    box-shadow: none;
+  }
+}
+
+/* prevent zooming on mobile devices */
+input {
+  font-size: 14px !important;
+}
