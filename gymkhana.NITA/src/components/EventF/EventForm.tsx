@@ -71,7 +71,7 @@ const EventForm: React.FC = () => {
         setLoading(false);
         return;
       }
-      const response = await fetch('http://localhost:8080/api/events', {
+      const response = await fetch('${process.env.NEXT_PUBLIC_API_URL}/api/events', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

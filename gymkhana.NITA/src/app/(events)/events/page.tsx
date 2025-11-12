@@ -10,7 +10,7 @@ const EventsPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/events')
+    fetch('${process.env.NEXT_PUBLIC_API_URL}/api/events')
       .then(res => res.json())
       .then(data => {
         setEvents(data);
