@@ -16,7 +16,7 @@ const Hero = async () => {
   const clubs = await getActiveClubs();
   return (
     <section
-      className='relative flex h-[55dvh] w-full items-center justify-center lg:h-[75dvh]'
+      className='relative flex h-[45dvh] w-full items-center justify-center lg:h-[60dvh]'
       id='hero'
     >
       <Image
@@ -28,7 +28,7 @@ const Hero = async () => {
       />
       <div className='absolute top-0 mx-auto flex h-full w-full max-w-screen-md flex-col lg:max-w-screen-xl'>
         <div className='flex h-fit w-full flex-col lg:flex-row'>
-          <div className='flex h-full w-full basis-1/2 flex-col justify-center gap-8 px-3 py-16'>
+          <div className='flex h-full w-full basis-1/2 flex-col justify-center gap-8 px-3 py-6'>
             <h1 className='text-[2.5rem] font-bold leading-[1] lg:text-7xl'>
               Welcome to Gymkhana
             </h1>
@@ -65,7 +65,7 @@ const Hero = async () => {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                Report a Grievance
+                Connect
               </Link>
             </Button>
             <div></div>
@@ -121,7 +121,7 @@ const Hero = async () => {
             </CardContainer>
           </div>
         </div>
-        <div className='py-12'>
+        <div className='py-4'>
           <InfiniteMovingCards
             items={clubs}
             direction='right'
