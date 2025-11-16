@@ -28,7 +28,7 @@ const Hero = async () => {
       />
       <div className='absolute top-0 mx-auto flex h-full w-full max-w-screen-md flex-col lg:max-w-screen-xl'>
         <div className='flex h-fit w-full flex-col lg:flex-row'>
-          <div className='flex h-full w-full basis-1/2 flex-col justify-center gap-8 px-3 py-6'>
+          <div className='flex h-full w-full basis-1/2 flex-col justify-center gap-8 px-3 py-8'>
             <h1 className='text-[2.5rem] font-bold leading-[1] lg:text-7xl'>
               Welcome to Gymkhana
             </h1>
@@ -125,7 +125,7 @@ const Hero = async () => {
             </CardContainer>
           </div>
         </div>
-        <div className='py-4'>
+        <div className='py-7'>
           <InfiniteMovingCards
             items={clubs}
             direction='right'
