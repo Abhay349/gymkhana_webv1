@@ -151,3 +151,5 @@ export default function AboutGymkhana() {
         </section>
       </div>
     </div>
+    );
+}
