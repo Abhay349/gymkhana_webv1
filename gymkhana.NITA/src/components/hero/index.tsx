@@ -61,7 +61,7 @@ const Hero = async () => {
               asChild
             >
               <Link
-                href='mailto:gymkhana25@zohomail.in?subject=Connecting Regarding [Topic]&body=Dear%20Gymkhana%20Team,%0D%0AI%20Would%20Like%20tTo%20Connect%20Due%20To:'
+                href='mailto:gymkhana25@zohomail.in?subject=Connecting Regarding [Topic]&body=Dear%20Gymkhana%20Team,%0D%0AI%20would%20like%20to%20connect%20due%20to:'
                 target='_blank'
                 rel='noopener noreferrer'
               >
