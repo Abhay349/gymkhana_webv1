@@ -146,7 +146,7 @@ interface ItemProps {
 
 const aboutItems: ItemProps[] = [
   { href: "#hero", label: "About Us" },
-  { href: "mailto:gymkhana25@zohomail.in", label: "Contact Us" },
+  { href: "mailto:complaints.gymkhana@zohomail.in", label: "Report Us" },
   { href: "/privacy", label: "Privacy Policy" },
 
 ];
