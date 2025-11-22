@@ -112,7 +112,9 @@ const Hero = async () => {
                   <CardItem translateZ={20} as='div'>
                     <Button asChild>
                       <Link
-                        href='https://nita.ac.in/userpanel/StudentNotification.aspx'
+                        href='ek chota sa kaam karde bas
+notices ka button jo h, if possible, isme redirect karde
+https://whatsapp.com/channel/0029Vb6rfBqG8l5KvOIVik16'
                         target='_blank'
                         rel='noopener noreferrer'
                       >
