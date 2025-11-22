@@ -130,8 +130,8 @@ export const homePageItems: SideNavItem[] = [
     href: '/clubs',
   },
   {
-    name: 'All Forms',
+    name: 'Notice',
     Icon: PiScrollBold,
-    href: 'https://docs.google.com/forms/d/1Gxv--RFYgLxoyLa3T0iSQeKIO9IiuJPTaaILDfhwLEM/edit',
+    href: 'https://whatsapp.com/channel/0029Vb6rfBqG8l5KvOIVik16',
   },
 ];
