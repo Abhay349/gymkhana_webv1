@@ -147,7 +147,7 @@ interface ItemProps {
 const aboutItems: ItemProps[] = [
   { href: "#hero", label: "About Us" },
   { href: "mailto:complaints.gymkhana@zohomail.in?subject=Grievance%20Report&body=Dear%20Gymkhana%20Team,%0D%0AI%20would%20like%20to%20report%20the%20following%20issue:", label: "Report Us" },
-  { href: "/privacy", label: "Privacy Policy" },
+  { href: "https://whatsapp.com/channel/0029Vb6rfBqG8l5KvOIVik16", label: "Join Us" },
 
 ];
 
