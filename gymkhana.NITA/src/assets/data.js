@@ -22,6 +22,12 @@ import nlc from './NLC.png';
 
 export const data = [
   {
+    club: 'DSAI',
+    image: DSAI_logo,
+    url: 'https://www.instagram.com/dsai_nita/',
+    category: 'Technical',
+  },
+  {
     club: 'B-Club',
     image: BClub_logo,
     url: 'https://www.instagram.com/bclub.nita/',
@@ -86,12 +92,6 @@ export const data = [
     image: ThinkIndia_logo,
     url: 'https://www.instagram.com/thinkindia_nita/',
     category: 'Cultural',
-  },
-  {
-    club: 'DSAI',
-    image: DSAI_logo,
-    url: 'https://www.instagram.com/dsai_nita/',
-    category: 'Technical',
   },
   {
     club: 'Kabaddi',
