@@ -49,6 +49,7 @@ export default authMiddleware({
     /^\/events.*$/,
     /^\/blog1*$/,
     /^\/blog2*$/,
+    /^\/blog.*$/,
     // /^\/forms.*$/,
   ],
   ignoredRoutes: ['/api/og'],
