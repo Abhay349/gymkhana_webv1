@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
             {blogs.slice(0, showAllBlogs ? blogs.length : 1).map((blog, index) => (
               <Link
                 key={index}
-                href={index === 0 ? "/blog1" : index === 1 ? "/blog2" : "#"}
+                href={index === 0 ? "/blog/articulate-masterclass" : index === 1 ? "/blog/rajkush-journey" : "#"}
                 className="w-full border rounded-xl p-6 shadow-sm hover:shadow-md transition bg-white block cursor-pointer"
               >
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{blog.title}</h3>
