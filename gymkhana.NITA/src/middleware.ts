@@ -2,6 +2,11 @@ import { authMiddleware } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
 
 export default authMiddleware({
+  const userAgent = req.headers.get("user-agent") || "";
+
+   if (userAgent.includes("Googlebot")) {
+  return NextResponse.next();
+  }
   afterAuth(auth, req) {
     const metadata = (auth.sessionClaims as CustomJwtSessionClaims)?.metadata;
     const registered = !!auth.userId && metadata?.role !== undefined;
@@ -58,5 +63,7 @@ export default authMiddleware({
 });
 
 export const config = {
-  matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
+  matcher: [
+    '/((?!_next|api|trpc|robots.txt|sitemap.xml).*)',
+  ],
 };
