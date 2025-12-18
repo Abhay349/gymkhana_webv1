@@ -16,19 +16,19 @@ const Hero = async () => {
   const clubs = await getActiveClubs();
   return (
     <section
-      className='relative flex h-[51dvh] w-full items-center justify-center lg:h-[70dvh]'
+      className='relative flex min-h-[51dvh] w-full items-center justify-center lg:min-h-[70dvh] mb-0.5'
       id='hero'
     >
       <Image
         src={BlueArrowBG.src}
         alt='Hero background'
-        className='h-full w-full object-cover'
+        className='absolute inset-0 h-full w-full object-cover'
         width={1000}
         height={500}
       />
-      <div className='absolute top-0 mx-auto flex h-full w-full max-w-screen-md flex-col lg:max-w-screen-xl'>
+      <div className='mx-auto relative z-10 flex w-full max-w-screen-md flex-col lg:max-w-screen-xl'>
         <div className='flex h-fit w-full flex-col lg:flex-row'>
-          <div className='flex h-full w-full basis-1/2 flex-col justify-center gap-8 px-3 py-8'>
+          <div className='flex h-full w-full basis-1/2 flex-col justify-center gap-4 px-3 py-4'>
             <h1 className='text-[2.5rem] font-bold leading-[1] lg:text-7xl'>
               Welcome to Gymkhana
             </h1>
@@ -57,7 +57,7 @@ const Hero = async () => {
             </div>
             <Button
               variant='default'
-              className='rounded-lg bg-gradient-to-r from-blue-600 to-indigo-400 px-6 py-2 font-semibold tracking-wide text-white shadow-md transition-all duration-300 ease-in-out hover:from-blue-700 hover:to-indigo-800'
+              className='mt-4 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-400 px-6 py-2 font-semibold tracking-wide text-white shadow-md transition-all duration-300 ease-in-out hover:from-blue-700 hover:to-indigo-800'
               asChild
             >
               <Link
@@ -99,7 +99,7 @@ const Hero = async () => {
                     alt='Gymkhana Logo'
                   />
                 </CardItem>
-                <div className='mt-20 flex items-center justify-between'>
+                <div className='mt-6 flex items-center justify-between'>
                   <CardItem translateZ={20} as='div'>
                     <Button asChild variant='ghost'>
                      <Link
@@ -125,7 +125,7 @@ const Hero = async () => {
             </CardContainer>
           </div>
         </div>
-        <div className='py-7'>
+  <div className='py-0.5'>
           <InfiniteMovingCards
             items={clubs}
             direction='right'
