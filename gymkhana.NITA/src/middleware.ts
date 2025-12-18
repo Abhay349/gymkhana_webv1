@@ -2,11 +2,6 @@ import { authMiddleware } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
 
 export default authMiddleware({
-  const userAgent = req.headers.get("user-agent") || "";
-
-   if (userAgent.includes("Googlebot")) {
-  return NextResponse.next();
-  }
   afterAuth(auth, req) {
     const metadata = (auth.sessionClaims as CustomJwtSessionClaims)?.metadata;
     const registered = !!auth.userId && metadata?.role !== undefined;
