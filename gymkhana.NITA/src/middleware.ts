@@ -43,6 +43,8 @@ export default authMiddleware({
     '/',
     '/gymkhanaPage',
     /^\/api.*$/,
+    '/robots.txt',      
+    '/sitemap.xml', 
     /^\/login.*$/,
     /^\/clubs.*$/,
     /^\/add-event.*$/,
