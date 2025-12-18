@@ -43,8 +43,6 @@ export default authMiddleware({
     '/',
     '/gymkhanaPage',
     /^\/api.*$/,
-    '/robots.txt',      
-    '/sitemap.xml', 
     /^\/login.*$/,
     /^\/clubs.*$/,
     /^\/add-event.*$/,
@@ -58,7 +56,5 @@ export default authMiddleware({
 });
 
 export const config = {
-  matcher: [
-    '/((?!_next|api|trpc|robots.txt|sitemap.xml).*)',
-  ],
+ matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
 };
