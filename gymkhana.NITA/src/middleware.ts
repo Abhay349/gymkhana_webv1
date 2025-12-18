@@ -1,60 +1,52 @@
-import { authMiddleware } from '@clerk/nextjs/server';
-import { NextResponse } from 'next/server';
+import { authMiddleware } from '@clerk/nextjs/server'
+import { NextResponse } from 'next/server'
 
-export default authMiddleware({
-  afterAuth(auth, req) {
-    const metadata = (auth.sessionClaims as CustomJwtSessionClaims)?.metadata;
-    const registered = !!auth.userId && metadata?.role !== undefined;
+function isBot(req: Request) {
+  const ua = req.headers.get('user-agent') || ''
+  return /Googlebot|bingbot|Slurp|DuckDuckBot|Baiduspider|YandexBot/i.test(ua)
+}
 
-    // Redirect to Home Screen if user is not logged in and trying to access Onboarding Screen.
-    if (!auth.userId && req.nextUrl.pathname === '/onboarding') {
-      const home = new URL('/', req.url);
-      return NextResponse.redirect(home);
-    }
+export default function middleware(req: Request) {
+  
+  if (isBot(req)) {
+    return NextResponse.next()
+  }
 
-    // Redirect to Home Screen if user is logged in and has completed Onboarding process.
-    if (registered && req.nextUrl.pathname === '/onboarding') {
-      const home = new URL('/', req.url);
-      return NextResponse.redirect(home);
-    }
+  // Otherwise use Clerk auth
+  return authMiddleware({
+    afterAuth(auth, req) {
+      const metadata = (auth.sessionClaims as any)?.metadata
+      const registered = !!auth.userId && metadata?.role !== undefined
 
-    // Redirect to Onboarding Screen if user is logged in and has not completed Onboarding process.
-    if (
-      !registered &&
-      !auth.isPublicRoute &&
-      req.nextUrl.pathname !== '/onboarding'
-    ) {
-      const dashboard = new URL('/onboarding', req.url);
-      return NextResponse.redirect(dashboard);
-    }
-  },
-  beforeAuth(req) {
-    // Add x-pathname header to the request for getting the current pathname in the server.
-    const requestHeaders = new Headers(req.headers);
-    requestHeaders.set('x-pathname', req.nextUrl.pathname);
+      if (!auth.userId && req.nextUrl.pathname === '/onboarding') {
+        return NextResponse.redirect(new URL('/', req.url))
+      }
 
-    return NextResponse.next({
-      request: {
-        headers: requestHeaders,
-      },
-    });
-  },
-  publicRoutes: [
-    '/',
-    '/gymkhanaPage',
-    /^\/api.*$/,
-    /^\/login.*$/,
-    /^\/clubs.*$/,
-    /^\/add-event.*$/,
-    /^\/events.*$/,
-    /^\/blog1*$/,
-    /^\/blog2*$/,
-    /^\/blog.*$/,
-    // /^\/forms.*$/,
-  ],
-  ignoredRoutes: ['/api/og'],
-});
+      if (registered && req.nextUrl.pathname === '/onboarding') {
+        return NextResponse.redirect(new URL('/', req.url))
+      }
+
+      if (
+        !registered &&
+        !auth.isPublicRoute &&
+        req.nextUrl.pathname !== '/onboarding'
+      ) {
+        return NextResponse.redirect(new URL('/onboarding', req.url))
+      }
+    },
+    publicRoutes: [
+      '/',
+      '/gymkhanaPage',
+      /^\/clubs.*$/,
+      /^\/events.*$/,
+      /^\/blog.*$/,
+      /^\/login.*$/,
+      /^\/api.*$/,
+    ],
+    ignoredRoutes: ['/api/og'],
+  })(req)
+}
 
 export const config = {
- matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
-};
+  matcher: ['/((?!_next|.*\\..*).*)'],
+}
