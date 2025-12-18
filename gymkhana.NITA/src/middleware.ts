@@ -1,18 +1,18 @@
 import { authMiddleware } from '@clerk/nextjs/server'
 import { NextResponse } from 'next/server'
+import type { NextFetchEvent, NextRequest } from 'next/server'
 
-function isBot(req: Request) {
+function isBot(req: NextRequest) {
   const ua = req.headers.get('user-agent') || ''
   return /Googlebot|bingbot|Slurp|DuckDuckBot|Baiduspider|YandexBot/i.test(ua)
 }
 
-export default function middleware(req: Request) {
-  
+export default function middleware(req: NextRequest, evt: NextFetchEvent) {
+ 
   if (isBot(req)) {
     return NextResponse.next()
   }
 
-  // Otherwise use Clerk auth
   return authMiddleware({
     afterAuth(auth, req) {
       const metadata = (auth.sessionClaims as any)?.metadata
@@ -44,7 +44,7 @@ export default function middleware(req: Request) {
       /^\/api.*$/,
     ],
     ignoredRoutes: ['/api/og'],
-  })(req)
+  })(req, evt) 
 }
 
 export const config = {
