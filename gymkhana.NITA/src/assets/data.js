@@ -4,11 +4,11 @@ import DZire_logo from './D-Zire_logo.jpg';
 import dcc_logo from './dcc_logo.png';
 import FAC_logo from './FAC_logo.png';
 import Malhar_logo from './Malhar_logo.png';
-import MUNSOC_logo from './MUNSOC _logo.png';
+import MUNSOC_logo from './MUNSOC_logo.jpg';
 import Phewsion_logo from './Phewsion_logo.png';
 import ThinkIndia_logo from './ThinkIndia_logo.png';
 import DSAI_logo from './DSAI_logo.png';
-import Anarc_logo from './Anarc_logo.png';
+import Anarc_logo from './Anarc_logo.jpg';
 import Aaveg_logo from './Aaveg_logo.png';
 import BCC_logo from './BCC_logo.png';
 import sarc_logo from './sarc_logo.png';
@@ -19,6 +19,12 @@ import we_can_new_logo from './we_can_new_logo.png';
 import ncc_logo from './ncc.png';
 import Hoopers from './Hoopers.png';
 import nlc from './NLC.png';   
+import E_cell_logo from './E-cell.jpg'
+import Pixels_logo from './Pixels.jpg'
+import Sangagan_Prayog from './Sangagan-Prayog.jpg'
+import Consulting_logo from './Consulting.jpg'
+import Anima from './Anima.jpg'
+import Mech_Estrimo from './Mech Estrimo.jpg'
 
 export const data = [
   {
@@ -33,6 +39,22 @@ export const data = [
     image: BClub_logo,
     url_insta: 'https://www.instagram.com/bclub.nita/',
     url_linkedin: 'https://www.linkedin.com/company/business-club-nit-agartala/',
+    category: 'Technical',
+  },
+  
+   {
+    club: 'Pixels',
+    image: Pixels_logo,
+    url_insta: 'https://www.instagram.com/pixels.nita',
+    url_linkedin: 'https://www.linkedin.com/company/pixels-club-nit-agartala/',
+    category: 'Technical',
+  },
+  
+   {
+    club: 'Consulting Club',
+    image: Consulting_logo,
+    url_insta: 'https://www.instagram.com/consulting_club_nita?igsh=MTFzYXVjcHgxa2w5eA==',
+    url_linkedin: 'https://www.linkedin.com/company/consulting-club-of-nit-agartala/',
     category: 'Technical',
   },
   {
@@ -56,6 +78,20 @@ export const data = [
     url_linkedin: '',
     category: 'Cultural',
   },
+   {
+    club: 'Anima The Aero club',
+    image: Anima,
+    url_insta: 'https://www.instagram.com/anima_the_aero_club/',
+    url_linkedin: 'https://www.linkedin.com/company/anima-the-aero-club-of-nit-agartala/',
+    category: 'Technical',
+  },
+   {
+    club: 'Anarc',
+    image: Anarc_logo,
+    url_insta: 'https://www.instagram.com/anarc_nita/',
+    url_linkedin: 'https://www.linkedin.com/in/anarcnita',
+    category: 'Technical',
+  },
   {
     club: 'Malhar',
     image: Malhar_logo,
@@ -78,6 +114,13 @@ export const data = [
     url_linkedin: 'https://www.linkedin.com/company/munsoc-nita/',
     category: 'Technical',
   },
+   {
+    club: 'E-cell',
+    image: E_cell_logo,
+    url_insta: '',
+    url_linkedin: '',
+    category: 'Technical',
+  },
   {
     club: 'Xanthronz',
     image: Xanthronz,
@@ -85,11 +128,26 @@ export const data = [
     url_linkedin: 'https://www.linkedin.com/company/team-xanthronz/',
     category: 'Technical',
   },
+   {
+    club: 'Mech Estrimo',
+    image: Mech_Estrimo,
+    url_insta: 'https://www.instagram.com/team_mechestremo_racing?igsh=dzM3MGtwdThpamFw',
+    url_linkedin: 'https://www.linkedin.com/company/mechestremo/',
+    category: 'Technical',
+  },
   {
     club: 'Phewsion',
     image: Phewsion_logo,
     url_insta: 'https://www.instagram.com/phewsion/',
     url_linkedin: '',
+    category: 'Technical',
+  },
+  
+   {
+    club: 'Sangagan Prayog',
+    image: Sangagan_Prayog,
+    url_insta: 'https://www.instagram.com/sanganan_prayog?igsh=MTh4ZHZpN3FmdjFncw==',
+    url_linkedin: 'https://www.linkedin.com/in/sanganan-prayog-a96423380?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     category: 'Technical',
   },
   {
@@ -127,13 +185,7 @@ export const data = [
     url_linkedin: '',
     category: 'Sports',
   },
-  {
-    club: 'Anarc',
-    image: Anarc_logo,
-    url_insta: 'https://www.instagram.com/anarc_nita/',
-    url_linkedin: 'https://www.linkedin.com/in/anarcnita',
-    category: 'Technical',
-  },
+ 
   {
     club: 'Aaveg',
     image: Aaveg_logo,
