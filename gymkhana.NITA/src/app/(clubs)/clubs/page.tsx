@@ -11,7 +11,7 @@ import { FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 interface Club {
   club: string;
   category: string;
-  url_insta: string;
+  url_insta?: string;
   image:  StaticImageData;
    scale?: number;
     url_linkedin?: string;
