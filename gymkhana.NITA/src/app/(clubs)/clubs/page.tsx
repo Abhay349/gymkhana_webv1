@@ -4,12 +4,17 @@ import React, { useState } from 'react';
 import { data } from 'src/assets/data.js';
 import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
+import { FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+
+
 
 interface Club {
   club: string;
   category: string;
-  url: string;
-  image: string | StaticImageData;
+  url_insta: string;
+  image:  StaticImageData;
+   scale?: number;
+    url_linkedin?: string;
 }
 
 const Clubs: React.FC = () => {
@@ -41,19 +46,21 @@ const Clubs: React.FC = () => {
       <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
         {filteredData.map((item: Club, index: number) => (
           <a
-            key={index}
-            href={item.url}
+            key={index} 
             target='_blank'
             rel='noopener noreferrer'
             className='flex aspect-[4/3] flex-col items-center justify-center rounded-lg border border-gray-300 bg-white p-6 shadow-sm'
           >
-            <div className='flex h-32 w-40 items-center justify-center'>
+            <div className='flex h-32 w-40 items-center justify-center overflow-hidden '>
               <Image
                 src={item.image}
                 alt={item.club}
                 width={120}
                 height={120}
-                className=''
+                className='max-h-full max-w-full object-contain'
+                style={{
+      transform: `scale(${item.scale ?? 1.0})`,
+    }}
               />
             </div>
             <div className='mt-4 text-center'>
@@ -64,6 +71,37 @@ const Clubs: React.FC = () => {
                 NIT AGARTALA
               </p>
             </div>
+
+            {/* Instagram and Linkedin */}
+            <div className='mt-3 flex gap-4'>
+        {item.url_insta && (
+          <span
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              window.open(item.url_insta, '_blank');
+            }}
+            className='cursor-pointer hover:text-pink-600 transition'
+            aria-label='Instagram'
+          >
+            <FaInstagram size={18} />
+          </span>
+        )}
+
+        {item.url_linkedin && (
+          <span
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              window.open(item.url_linkedin, '_blank');
+            }}
+            className='cursor-pointer hover:text-blue-600 transition'
+            aria-label='LinkedIn'
+          >
+            <FaLinkedinIn size={18} />
+          </span>
+        )}
+      </div>
           </a>
         ))}
       </div>
