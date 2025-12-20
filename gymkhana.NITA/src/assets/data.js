@@ -64,19 +64,19 @@ export const data = [
     website: 'https://bclubnita.in/'
   },
   {
+    club: 'Board of Technical Community',
+    image: btc_logo,
+    url_insta: 'https://www.instagram.com/btcgymkhana/',
+    url_linkedin: '',
+    category: 'Communities',
+  },
+  {
     club: 'Board of Cultural Committee',
     image: BCC_logo,
     url_insta: 'https://www.instagram.com/bcc_gymkhana/',
     url_linkedin: '',
     category: 'Communities',
     scale: 1.35,
-  },
-  {
-    club: 'Board of Technical Community',
-    image: btc_logo,
-    url_insta: 'https://www.instagram.com/btcgymkhana/',
-    url_linkedin: '',
-    category: 'Communities',
   },
   {
     club: 'Consulting Club',
@@ -86,17 +86,18 @@ export const data = [
     category: 'Technical',
   },
   {
-    club: 'Developers & Coders Club',
-    image: dcc_logo,
-    url_insta: 'https://www.instagram.com/dccnita/',
-    url_linkedin: 'https://www.linkedin.com/in/dccnita/',
-    category: 'Technical',
-  },
-  {
     club: 'DSAI',
     image: DSAI_logo,
     url_insta: 'https://www.instagram.com/dsai_nita/',
     url_linkedin: 'https://www.linkedin.com/company/dsai-nita/',
+    category: 'Technical',
+    website: 'https://dsai.vercel.app/'
+  },
+  {
+    club: 'Developers & Coders Club',
+    image: dcc_logo,
+    url_insta: 'https://www.instagram.com/dccnita/',
+    url_linkedin: 'https://www.linkedin.com/in/dccnita/',
     category: 'Technical',
   },
   {
