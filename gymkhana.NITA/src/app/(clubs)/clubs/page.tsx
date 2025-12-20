@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { data } from 'src/assets/data.js';
 import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
-import { FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaInstagram, FaLinkedinIn ,FaGlobe } from 'react-icons/fa';
 
 
 
@@ -13,8 +13,9 @@ interface Club {
   category: string;
   url_insta?: string;
   image:  StaticImageData;
-   scale?: number;
-    url_linkedin?: string;
+  scale?: number;
+  url_linkedin?: string;
+  website?: string ;
 }
 
 const Clubs: React.FC = () => {
@@ -99,6 +100,20 @@ const Clubs: React.FC = () => {
             aria-label='LinkedIn'
           >
             <FaLinkedinIn size={18} />
+          </span>
+        )}
+
+        {item.website && (
+          <span
+          onClick={(e) =>{
+            e.preventDefault();
+            e.stopPropagation();
+            window.open(item.website, 'Not found') ;
+          }}
+          className='cursor-pointer hover:text-blue-500 transition'
+          aria-label='website'
+          >
+            <FaGlobe size={18}/>
           </span>
         )}
       </div>
