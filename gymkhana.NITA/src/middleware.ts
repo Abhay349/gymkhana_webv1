@@ -39,6 +39,7 @@ export default function middleware(req: NextRequest, evt: NextFetchEvent) {
       '/gymkhanaPage',
       /^\/clubs.*$/,
       /^\/events.*$/,
+      /^\/add-event.*$/,
       /^\/blog.*$/,
       /^\/login.*$/,
       /^\/api.*$/,
@@ -47,6 +48,7 @@ export default function middleware(req: NextRequest, evt: NextFetchEvent) {
   })(req, evt) 
 }
 
+
 export const config = {
-  matcher: ['/((?!_next|.*\\..*).*)'],
+  matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
 }
